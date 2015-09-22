@@ -162,7 +162,7 @@ void loop() {
  if(Serial.available() > 0)
     {
        String str = Serial.readStringUntil('\n');
-    
+    Serial.println(str);
         if (str == "{command:off}"){
           digitalWrite(ledPinRed, LOW);
           digitalWrite(ledPinGreen, LOW);
