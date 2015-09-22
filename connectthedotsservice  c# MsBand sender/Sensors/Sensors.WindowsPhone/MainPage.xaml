@@ -1,0 +1,162 @@
+﻿<Page
+    x:Class="Sensors.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Sensors"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+	<Page.Resources>
+		<Thickness x:Key="PhoneBorderThickness">2.5</Thickness>
+		<FontFamily x:Key="PhoneFontFamilyNormal">Segoe WP</FontFamily>
+		<FontWeight x:Key="PhoneButtonFontWeight">Semibold</FontWeight>
+		<x:Double x:Key="TextStyleLargeFontSize">18.14</x:Double>
+		<Thickness x:Key="PhoneButtonContentPadding">9.5,0,9.5,3.5</Thickness>
+		<x:Double x:Key="PhoneButtonMinHeight">57.5</x:Double>
+		<x:Double x:Key="PhoneButtonMinWidth">109</x:Double>
+		<Thickness x:Key="PhoneTouchTargetOverhang">0,9.5</Thickness>
+		<SolidColorBrush x:Key="ButtonDisabledBackgroundThemeBrush" Color="Transparent"/>
+
+		<Style x:Key="buttonLeftAlign" TargetType="Button">
+			<Setter Property="Background" Value="Transparent"/>
+			<Setter Property="BorderBrush" Value="{ThemeResource PhoneForegroundBrush}"/>
+			<Setter Property="Foreground" Value="{ThemeResource PhoneForegroundBrush}"/>
+			<Setter Property="BorderThickness" Value="{ThemeResource PhoneBorderThickness}"/>
+			<Setter Property="FontFamily" Value="{ThemeResource PhoneFontFamilyNormal}"/>
+			<Setter Property="FontWeight" Value="{ThemeResource PhoneButtonFontWeight}"/>
+			<Setter Property="FontSize" Value="{ThemeResource TextStyleLargeFontSize}"/>
+			<Setter Property="Padding" Value="{ThemeResource PhoneButtonContentPadding}"/>
+			<Setter Property="MinHeight" Value="{ThemeResource PhoneButtonMinHeight}"/>
+			<Setter Property="MinWidth" Value="{ThemeResource PhoneButtonMinWidth}"/>
+			<Setter Property="HorizontalAlignment" Value="Left"/>
+			<Setter Property="VerticalAlignment" Value="Center"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="Button">
+						<Grid x:Name="Grid" Background="Transparent">
+							<VisualStateManager.VisualStateGroups>
+								<VisualStateGroup x:Name="CommonStates">
+									<VisualStateGroup.Transitions>
+										<VisualTransition From="Pressed" To="PointerOver">
+											<Storyboard>
+												<PointerUpThemeAnimation Storyboard.TargetName="Grid"/>
+											</Storyboard>
+										</VisualTransition>
+										<VisualTransition From="PointerOver" To="Normal">
+											<Storyboard>
+												<PointerUpThemeAnimation Storyboard.TargetName="Grid"/>
+											</Storyboard>
+										</VisualTransition>
+										<VisualTransition From="Pressed" To="Normal">
+											<Storyboard>
+												<PointerUpThemeAnimation Storyboard.TargetName="Grid"/>
+											</Storyboard>
+										</VisualTransition>
+									</VisualStateGroup.Transitions>
+									<VisualState x:Name="Normal"/>
+									<VisualState x:Name="PointerOver"/>
+									<VisualState x:Name="Pressed">
+										<Storyboard>
+											<PointerDownThemeAnimation Storyboard.TargetName="Grid"/>
+											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
+												<DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonPressedForegroundThemeBrush}"/>
+											</ObjectAnimationUsingKeyFrames>
+											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="Border">
+												<DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonPressedBackgroundThemeBrush}"/>
+											</ObjectAnimationUsingKeyFrames>
+										</Storyboard>
+									</VisualState>
+									<VisualState x:Name="Disabled">
+										<Storyboard>
+											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
+												<DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonDisabledForegroundThemeBrush}"/>
+											</ObjectAnimationUsingKeyFrames>
+											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="Border">
+												<DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonDisabledBorderThemeBrush}"/>
+											</ObjectAnimationUsingKeyFrames>
+											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="Border">
+												<DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonDisabledBackgroundThemeBrush}"/>
+											</ObjectAnimationUsingKeyFrames>
+										</Storyboard>
+									</VisualState>
+								</VisualStateGroup>
+							</VisualStateManager.VisualStateGroups>
+							<Border x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Margin="{ThemeResource PhoneTouchTargetOverhang}">
+								<ContentPresenter x:Name="ContentPresenter" AutomationProperties.AccessibilityView="Raw" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" Foreground="{TemplateBinding Foreground}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+							</Border>
+						</Grid>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+	</Page.Resources>
+    <Grid>
+        <ScrollViewer Margin="10,0,10,10" VerticalScrollBarVisibility="Auto" VerticalAlignment="Bottom" Height="100" Visibility="Collapsed">
+            <TextBlock TextWrapping="Wrap" Text="{Binding StatusMessage}" FontSize="16"/>
+        </ScrollViewer>
+        <StackPanel Margin="20,10,20,48" Orientation="Vertical">
+        	<Grid Margin="0,0,-0.167,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+        		<Image HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="80" Source="Assets/img_face.png"/>
+        		<StackPanel Margin="100,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center">
+        			<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Swiss 721" FontSize="32" Text="Good Day!"/>
+
+        			<TextBlock Name="usernameTxBlk" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Swiss 721" FontSize="24" Text="Name set dynamically in code" Foreground="#FFCFCFCF"/>
+
+        		</StackPanel>
+
+        	</Grid>
+        	<TextBlock x:Name="lblDate" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Swiss 721" FontSize="24" Text="Thursday, 2 Jul 2015" Margin="0,5,0,0"/>
+        	<TextBlock x:Name="lblQuarantine" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Swiss 721" FontSize="24" Text=""/>
+        	<Grid Height="110" Margin="0,10,0,0">
+        		<Rectangle x:Name="rectTempGreen" Fill="#FF11772D"/>
+        		<Rectangle x:Name="rectTempGrey" Fill="#FF727272"/>
+        		<Rectangle x:Name="rectTempRed" Fill="#FFDB0000" Visibility="Collapsed"/>
+
+        		<StackPanel Margin="0,5,0,0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top">
+        			<Image HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="40" Source="Assets/img_temp.png"/>
+        			<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center" FontFamily="Swiss 721" FontSize="21.333" Text="Skin Temperature"/>
+        		</StackPanel>
+        		<StackPanel Margin="0,40,0,0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+        			<TextBlock x:Name="lblTemp" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" FontFamily="Swiss 721" FontSize="48" Text="-" Margin="0"/>
+        			<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center" FontFamily="Swiss 721" FontSize="48" Text="°C" Margin="0" Visibility="Collapsed"/>
+
+        		</StackPanel>
+
+        	</Grid>
+        	<Grid x:Name="gridHeart" Height="110" Margin="0,10,0,0">
+        		<Rectangle x:Name="rectHeartGreen" Fill="#FF11772D"/>
+        		<Rectangle x:Name="rectHeartGrey" Fill="#FF727272"/>
+        		<Rectangle x:Name="rectHeartRed" Fill="#FFDB0000" Visibility="Collapsed"/>
+
+        		<StackPanel Margin="0,5,0,0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top">
+        			<Image HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="40" Source="Assets/img_heart.png"/>
+        			<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center" FontFamily="Swiss 721" FontSize="21.333" Text="Heart Rate"/>
+        		</StackPanel>
+        		<TextBlock x:Name="lblHeart" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" FontFamily="Swiss 721" FontSize="48" Text="-" Margin="0,40,0,0"/>
+
+        	</Grid>
+        	<Grid Height="100" Margin="0,10,0,0">
+        		<Grid.ColumnDefinitions>
+        			<ColumnDefinition/>
+        			<ColumnDefinition/>
+        		</Grid.ColumnDefinitions>
+        		<Button x:Name="btnHotline" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Swiss 721" FontSize="18.667" Background="{ThemeResource PhoneAccentBrush}" BorderBrush="{ThemeResource PhoneAccentBrush}" BorderThickness="0" Margin="0,0,5,0" Click="btnHotline_Click" Style="{StaticResource buttonLeftAlign}" >
+        			<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" >
+        				<TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Hotline" VerticalAlignment="Center" FontSize="16" Foreground="White" FontFamily="Swiss 721"/>
+        				<Image Source="Assets/img_hotline.png" Margin="10,0" Width="45" Height="45" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        			</StackPanel>
+        		</Button>
+        		<Button x:Name="btnEmergency" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Swiss 721" FontSize="18.667" Background="{ThemeResource PhoneAccentBrush}" BorderBrush="{ThemeResource PhoneAccentBrush}" BorderThickness="0" Margin="5,0,0,0" Click="btnEmergency_Click" Style="{StaticResource buttonLeftAlign}" Grid.Column="1" >
+        			<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" >
+        				<TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Emergency" VerticalAlignment="Center" FontSize="16" Foreground="White" FontFamily="Swiss 721"/>
+        				<Image Source="Assets/img_emergency.png" Margin="10,0" Width="45" Height="45" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        			</StackPanel>
+        		</Button>
+        	</Grid>
+
+        </StackPanel>
+        <TextBlock x:Name="lblBand" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="24" Text="searching" Margin="20,0,0,10"/>
+
+    </Grid>
+</Page>

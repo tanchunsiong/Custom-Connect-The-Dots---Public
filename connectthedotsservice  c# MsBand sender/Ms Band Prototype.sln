@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sensors", "Sensors", "{89A6E7D8-0157-41A6-B574-0559F307FF8F}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Sensors.Shared", "Sensors\Sensors.Shared\Sensors.Shared.shproj", "{C628A594-0F2D-4E1E-AE32-3C2E424A56A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sensors.WindowsPhone", "Sensors\Sensors.WindowsPhone\Sensors.WindowsPhone.csproj", "{C8AA56B8-716D-4CBF-947A-C2231F6A3613}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Sensors\Sensors.Shared\Sensors.Shared.projitems*{c628a594-0f2d-4e1e-ae32-3c2e424a56a3}*SharedItemsImports = 13
+		Sensors\Sensors.Shared\Sensors.Shared.projitems*{c8aa56b8-716d-4cbf-947a-c2231f6a3613}*SharedItemsImports = 4
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C8AA56B8-716D-4CBF-947A-C2231F6A3613}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8AA56B8-716D-4CBF-947A-C2231F6A3613}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8AA56B8-716D-4CBF-947A-C2231F6A3613}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{C8AA56B8-716D-4CBF-947A-C2231F6A3613}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8AA56B8-716D-4CBF-947A-C2231F6A3613}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8AA56B8-716D-4CBF-947A-C2231F6A3613}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C628A594-0F2D-4E1E-AE32-3C2E424A56A3} = {89A6E7D8-0157-41A6-B574-0559F307FF8F}
+		{C8AA56B8-716D-4CBF-947A-C2231F6A3613} = {89A6E7D8-0157-41A6-B574-0559F307FF8F}
+	EndGlobalSection
+EndGlobal
