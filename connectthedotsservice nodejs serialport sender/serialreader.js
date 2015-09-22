@@ -1,17 +1,7 @@
 ﻿//based off http://danialk.github.io/blog/2014/04/12/arduino-and-nodejs-communication-with-serial-ports/
 
 
-// Set up variables
-var serviceBus = 'cspi1-ns',
-    eventHubName = 'ehmessages',
-    sasKeyName = 'devicereader', // A SAS Key Name for the Event Hub, with Receive privilege
-    sasKey = '6OQLW1oQGGDe6Vyan1qrnZeHzKIygMaCPVjPl8isnxE=', // The key value
-    consumerGroup = 'nodejsconsumergroup',
-    numPartitions = 8;
-var uriappend = "ConsumerGroups/" + consumerGroup + "/Partitions/";
 
-var Sbus = require('sbus-amqp10');
-var hub = Sbus.EventHubClient(serviceBus, eventHubName, sasKeyName, sasKey);
 
 // Set up variables
 var serviceBus2 = 'cspi1-ns',
@@ -92,23 +82,6 @@ sp.on("open", function () {
 
 
 
-    //for (var idx = 0; idx < numPartitions; ++idx) {
-    //    hub.eventHubReceive(uriappend + idx, new Date().getTime() - new Date().getTimezoneOffset(), function callback(rx_err, partition, payload) {
-    //        if (rx_err) {
-    //            console.log(rx_err);
-    //        } else {
-    //            console.log("partition: " + partition);
-    //            console.log(payload);
-				//sp.write(payload + "\n", function (err, results) {
-    //                console.log('err ' + err);
-    //                console.log('results ' + results);
-    //            });
-           
-    //        }
-    //    }
-    //    );
-    //}
-   
    
     
 });

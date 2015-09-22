@@ -22,17 +22,7 @@ For this project, follow the instructions.
 
 4. Replace the settings within "serialreader.js" with your eventhub name and key
 
-	// Set up variables, this is for reading from eventhub
-	var serviceBus = 'cspi1-ns',
-		eventHubName = 'ehmessages',
-		sasKeyName = 'devicereader', // A SAS Key Name for the Event Hub, with Receive privilege
-		sasKey = '6OQLW1oQGGDe6Vyan1qrnZeHzKIygMaCPVjPl8isnxE=', // The key value
-		consumerGroup = 'nodejsconsumergroup',
-		numPartitions = 8;
-	var uriappend = "ConsumerGroups/" + consumerGroup + "/Partitions/";
 
-	var Sbus = require('sbus-amqp10');
-	var hub = Sbus.EventHubClient(serviceBus, eventHubName, sasKeyName, sasKey);
 
 	// Set up variables, this is for sending to eventhub
 	var serviceBus2 = 'cspi1-ns',
