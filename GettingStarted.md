@@ -40,7 +40,7 @@ Setting up your IoT solution involves several distinct steps, each of which is f
 	2. [Azure prep](Azure/AzurePrep/AzurePrep.md) - Creating basic Azure resources
 	3. [Device setup](https://github.com/tanchunsiong/Custom-Connect-The-Dots---Public/tree/master/connectthedots%20arduino%20sketch) - Configuring your device(s)
 	4. [Sample website deployment](https://github.com/tanchunsiong/Custom-Connect-The-Dots---Public/tree/master/connectthedots%20nodejs%20website%20with%20highcharts) - Publishing a generic sample website for viewing the data
-	5. [Stream Analytics integration](StreamAnalyticsQueries/SA_setup.md) - Configuring Stream Analytics to send alerts and averages to the sample website.
+	5. [Stream Analytics integration](https://github.com/tanchunsiong/Custom-Connect-The-Dots---Public/blob/master/StreamAnalyticsQueries/SA_setup.md) - Configuring Stream Analytics to send alerts and averages to the sample website.
   
 To get started with our simple example, complete the tasks above in order. Navigation is provided on each page to get to the next topic.
 

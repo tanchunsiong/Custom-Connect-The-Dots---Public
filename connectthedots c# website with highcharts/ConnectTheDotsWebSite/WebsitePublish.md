@@ -57,4 +57,4 @@ You will need to replace the last four connection strings with the appropriate v
 
 ![](WebsiteRunning.jpg)
 
-If you're following the getting started project, the next task is [Stream Analytics integration](../StreamAnalyticsQueries/SA_setup.md).
+If you're following the getting started project, the next task is [Stream Analytics integration](https://github.com/tanchunsiong/Custom-Connect-The-Dots---Public/blob/master/StreamAnalyticsQueries/SA_setup.md).
