@@ -1,0 +1,51 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+
+    <script type="text/javascript">
+         function WebSocketTest()
+         {
+            if ("WebSocket" in window)
+            {
+               
+
+               var textValue = document.getElementsByName('txtMessage')[0].value
+               // Let us open a web socket
+               var ws = new WebSocket("ws://localhost:8080/");
+
+               ws.onopen = function()
+               {
+                  // Web Socket is connected, send data using send()
+                   ws.send(textValue);
+                   alert("Message is sent...");
+               };
+
+               //ws.onmessage = function (evt) {
+               //    var received_msg = evt.data;
+               //};
+
+               ws.onclose = function()
+               {
+                  // websocket is closed.
+                  alert("Connection is closed...");
+               };
+            }
+
+            else
+            {
+               // The browser doesn't support WebSocket
+               alert("WebSocket not supported by your Browser!");
+            }
+         }
+    </script>
+
+</head>
+<body>
+
+    <div id="sse">
+        <input type="text" name="txtMessage" id="txtMessage" />
+        <a href="javascript:WebSocketTest()">Send via WebSocket</a>
+    </div>
+
+</body>
+</html>

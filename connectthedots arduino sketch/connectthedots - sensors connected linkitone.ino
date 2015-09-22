@@ -162,16 +162,19 @@ void loop() {
  if(Serial.available() > 0)
     {
        String str = Serial.readStringUntil('\n');
-     
-       Serial.println(str);
-    }
-    digitalWrite(ledPinRed, LOW);
-digitalWrite(ledPinGreen, LOW);
-delay(2000);
+    
+        if (str == "{command:off}"){
+          digitalWrite(ledPinRed, LOW);
+          digitalWrite(ledPinGreen, LOW);
+        }
+        else if (str == "{command:on}"){
+          digitalWrite(ledPinRed, HIGH);
+          digitalWrite(ledPinGreen, HIGH);
+        }
 
-digitalWrite(ledPinRed, HIGH);
-digitalWrite(ledPinGreen, HIGH);
-	
+    }
+
+
 }
 
 char *dtostrf (double val, signed char width, unsigned char prec, char *sout) {
@@ -187,4 +190,3 @@ float get_light_level()
   lightSensor = 1 / lightSensor * 10;
   return (lightSensor);
 }
-

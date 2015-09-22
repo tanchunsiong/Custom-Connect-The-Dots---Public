@@ -32,7 +32,14 @@ wss.broadcast = function broadcast(data) {
     });
 };
 
+wss.on('connection', function connection(ws) {
 
+    ws.on('message', function incoming(message) {
+        console.log('received: %s', message);
+        wss.broadcast(message);
+    });
+  
+});
 
 for (var idx = 0; idx < numPartitions; ++idx) {
     hub.eventHubReceive(uriappend + idx, new Date().getTime() - new Date().getTimezoneOffset(), function callback(rx_err, partition, payload) {
