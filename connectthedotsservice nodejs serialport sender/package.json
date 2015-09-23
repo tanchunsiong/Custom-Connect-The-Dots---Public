@@ -28,7 +28,9 @@
     "serialport": "^1.7.4",
     "utf8": "*",
     "ws": "^0.8.0",
-    "xml2js": "*"
+    "xml2js": "*",
+    "amqp10": "^1.0.2",
+    "node-amqp-encoder": "^0.0.2"
   },
   "devDependencies": {
     "optimist": "*",

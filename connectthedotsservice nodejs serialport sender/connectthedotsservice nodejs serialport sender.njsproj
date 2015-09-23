@@ -22,10 +22,17 @@
     <Content Include="sbus-amqp10.zip" />
     <None Include="cspi1.pubxml" />
     <Content Include="package.json" />
+    <Compile Include="lib\eventhub.js" />
+    <Compile Include="lib\eventhubutils.js" />
+    <Compile Include="lib\eventhub_partition.js" />
+    <Compile Include="lib\eventhub_processor.js" />
+    <Compile Include="lib\sbus.js" />
+    <Compile Include="lib\storage.js" />
     <Compile Include="serialreader.js" />
     <Compile Include="test\test_eventhub_partition.js" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="lib\" />
     <Folder Include="test" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />

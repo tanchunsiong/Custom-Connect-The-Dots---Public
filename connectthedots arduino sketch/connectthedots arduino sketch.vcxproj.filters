@@ -25,9 +25,9 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="connectthedots - sensors connected arduino.ino" />
-    <None Include="connectthedots - sensors connected linkitone.ino" />
-    <None Include="connectthedots - sensors randomizer linkitone.ino" />
     <None Include="readme.md" />
+    <None Include="connectthedots - sensors connected arduino\connectthedots\connectthedots.ino" />
+    <None Include="connectthedots - sensors connected linkitone\connectthedots\connectthedots.ino" />
+    <None Include="connectthedots - sensors randomized linkitone\connectthedots\connectthedots.ino" />
   </ItemGroup>
 </Project>

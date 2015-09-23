@@ -1,3 +1,7 @@
+
+module.exports = require('./lib/sbus');
+
+
 var WebSocketServer = require('ws').Server;
 var http = require("http");
 var express = require("express");
@@ -13,32 +17,28 @@ var wss = new WebSocketServer({ server: server });
 
 
 
-// Set up variables
+// Set up variables for DEVICES
 var serviceBus = 'cspi1-ns',
     eventHubName = 'ehdevices',
     sasKeyName = 'WebSite', // A SAS Key Name for the Event Hub, with Receive privilege
     sasKey = 'pAgoae/7zJ+FSvyAVJObDZM0e73dwSrD5GpbiSxySFI=', // The key value
     consumerGroup = 'nodejsconsumergroup',
     numPartitions = 8;
-
+var sbus = require('./lib/sbusclient');
 var uriappend = "ConsumerGroups/" + consumerGroup + "/Partitions/";
-
-var Sbus = require('sbus-amqp10');
-var hub = Sbus.EventHubClient(serviceBus, eventHubName, sasKeyName, sasKey);
+var hub = sbus.EventHubClient(serviceBus, eventHubName, sasKeyName, sasKey);
 
 
-// Set up variables
+// Set up variables for ALERTS
 var serviceBus2 = 'cspi1-ns',
     eventHubName2 = 'ehalerts',
     sasKeyName2 = 'WebSite', // A SAS Key Name for the Event Hub, with Receive privilege
     sasKey2 = 'trgtkexrsPgvJZlDTdvsiYQTeMxpPt9DTDkIZfB1lrI=', // The key value
     consumerGroup2 = 'nodejsconsumergroup',
     numPartitions2 = 8;
-
-var uriappend2 = "ConsumerGroups/" + consumerGroup + "/Partitions/";
-
-var Sbus2 = require('sbus-amqp10');
-var hub2 = Sbus2.EventHubClient(serviceBus, eventHubName, sasKeyName, sasKey);
+var sbus2 = require('./lib/sbusclient');
+var uriappend2 = "ConsumerGroups/" + consumerGroup2 + "/Partitions/";;
+var hub2 = sbus2.EventHubClient(serviceBus2, eventHubName2, sasKeyName2, sasKey2);
 
 wss.broadcast = function broadcast(data) {
     wss.clients.forEach(function each(client) {
@@ -88,5 +88,4 @@ for (var idx = 0; idx < numPartitions2; ++idx) {
     }
     );
 }
-
 

@@ -45,9 +45,17 @@
     <Content Include="public\js\d3DataSourceSocket.js" />
     <Content Include="public\js\d3utils.js" />
     <Content Include="public\js\highchartCTD.js" />
+    <Compile Include="lib\eventhub.js" />
+    <Compile Include="lib\eventhubutils.js" />
+    <Compile Include="lib\eventhub_partition.js" />
+    <Compile Include="lib\eventhub_processor.js" />
+    <Compile Include="lib\sbusclient.js" />
+    <Compile Include="lib\sbus.js" />
+    <Compile Include="lib\storage.js" />
     <Compile Include="test\test_eventhub_partition.js" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="lib\" />
     <Folder Include="public\css\" />
     <Folder Include="public\img\" />
     <Folder Include="public\js\" />
