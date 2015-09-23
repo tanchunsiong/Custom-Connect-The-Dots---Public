@@ -14,11 +14,11 @@ String.prototype.hashCode = function () {
 };
 
 function onError(evt) {
-    
+
 }
 
 function onOpen(evt) {
-   
+
 }
 function checkBulkMode(evt) {
     if (evt.bulkData != undefined) {
@@ -70,10 +70,10 @@ function updateGauge(controlname, heartbeat) {
 
     if (chart) {
         point = chart.series[0].points[0];
-        
+
         newVal = heartbeat;
 
-   
+
 
         point.update(newVal);
     }
@@ -84,51 +84,16 @@ function addNewDataFlow(eventObject) {
     var measurenameHash = measurenameOriginal.hashCode();
     updateChart(eventObject, measurenameHash);
 
-    if (eventObject['measurename'] == "SSH Failed Login Attempt" && eventObject['displayname'] == "Average SSH Failed Login Attempt") {
+    if (eventObject['displayname'] == "Temp Average") {
         updateGauge('#container-speed', eventObject.value);
     }
 
     if (eventObject['measurename'] == "HeartRate" && eventObject['displayname'] == "Tan Chun Siong") {
         updateGauge('#container-speed2', eventObject.value);
     }
-   
-    
-    
-    // create chart if necessary
-    //if (!dataFlows.hasOwnProperty(measurenameHash)) {
-    //    dataFlows[measurenameHash] = {
-    //        containerId: 'chart_' + measurenameHash,
-    //        controllerId: 'controller_' + measurenameHash,
-    //        dataSourceFilter: new d3CTDDataSourceFilter(dataFlows.dataSource, { measurename: measurenameOriginal }),
-    //        flows: {}
-    //    };
-    //    // create flows controller
-    //    $('#controllersContainer').append('<ul id="' + dataFlows[measurenameHash].controllerId + '" style="top: ' + (Object.keys(dataFlows).length - 2) * 300 + 'px;" class="controller"></ul>');
-    //    dataFlows[measurenameHash].controller = new d3ChartControl(dataFlows[measurenameHash].controllerId)
-    //                .attachToDataSource(dataFlows[measurenameHash].dataSourceFilter);
 
-    //    // add new div object
-    //    $('#chartsContainer').height((Object.keys(dataFlows).length - 1) * 300 + 'px');
-    //    $('#chartsContainer').append('<div id="' + dataFlows[measurenameHash].containerId + '" style="top: ' + (Object.keys(dataFlows).length - 2) * 300 + 'px;" class="chart"></div>');
-    //    // create chart
-    //    dataFlows[measurenameHash].chart = (new d3Chart(dataFlows[measurenameHash].containerId))
-    //                .addEventListeners({ 'loading': onLoading, 'loaded': onLoaded })
-    //                .attachToDataSource(dataFlows[measurenameHash].dataSourceFilter)
-    //                .setFilter(dataFlows[measurenameHash].controller)
-    //                .setBulkMode(bulkMode);
 
-    //};
 
-    //// add new flow
-    //var newFlow = new d3DataFlow(eventObject.guid);
-
-    ////addNewSensorOption(newFlow, eventObject);
-
-    //dataFlows[measurenameHash].flows[eventObject.guid] = newFlow;
-
-    //dataFlows[measurenameHash].chart.addFlow(newFlow, 0);
-
-    //$(window).resize();
 }
 function onNewEvent(evt) {
     var eventObject = evt.owner;
@@ -144,71 +109,26 @@ function onNewEvent(evt) {
     if (!dataFlows.hasOwnProperty(measurenameHash) || !dataFlows[measurenameHash].flows.hasOwnProperty(eventObject['guid']))
         addNewDataFlow(eventObject);
 
-    //if (eventObject.alerttype != null) {
-    //    var table = $('#alertTable').DataTable();
-    //    var time = new Date(eventObject.timecreated);
-
-    //    // Check if we already have this one in the table already to prevent duplicates
-    //    var indexes = table.rows().eq(0).filter(function (rowIdx) {
-    //        if (
-    //            table.cell(rowIdx, 0).data().getTime() == time.getTime() && table.cell(rowIdx, 1).data() == eventObject.displayname && table.cell(rowIdx, 2).data() == eventObject.alerttype) {
-    //            return true;
-    //        }
-    //        return false;
-    //    });
-
-    //    //// The alert is a new one, lets display it
-    //    //if (indexes.length == 0) {
-    //    //    // For performance reasons, we want to limit the number of items in the table to a max of 20. 
-    //    //    // We will remove the oldest from the list
-    //    //    if (table.data().length > 19) {
-    //    //        // Search for the oldest time in the list of alerts
-    //    //        var minTime = table.data().sort(
-
-    //    //            function (a, b) {
-    //    //                return (a[0] > b[0]) - (a[0] < b[0])
-    //    //            })[0][0];
-    //    //        // Delete the oldest row
-    //    //        table.rows(
-
-    //    //            function (idx, data, node) {
-    //    //                return data[0].getTime() == minTime.getTime();
-    //    //            }).remove();
-    //    //    }
-
-    //    //    // Add the new alert to the table
-    //    //    var message = 'message';
-    //    //    if (eventObject.message != null) message = eventObject.message;
-    //    //    table.row.add([
-    //    //        time,
-    //    //        eventObject.displayname,
-    //    //        eventObject.alerttype,
-    //    //        message
-    //    //    ]).draw();
-
-    //    //}
-    //}
 }
 $(function () {
     $(document).ready(function () {
 
         // create datasource
         var sss = (window.location.protocol.indexOf('s') > 0 ? "s" : "");
-       // var uri = 'ws://localhost:51716/api/websocketconnect?clientId=none';
-        var uri = 'ws://cspi2.azurewebsites.net/api/websocketconnect?clientId=none';
+        var uri = 'ws://iisnodedemo.cloudapp.net:8080/';
         Highcharts.setOptions({
             global: {
                 useUTC: false
             }
         });
-        initGauge('#container-speed','SSH Attempts');
+        initGauge('#container-speed', 'SSH Attempts');
         initGauge('#container-speed2', 'Heartbeat of Tan Chun Siong');
         initGraph();
         var connection = new WebSocket(uri);
-        
+
         dataFlows.dataSource = new d3CTDDataSourceSocket(uri).addEventListeners({ 'eventObject': onNewEvent, 'error': onError, 'open': onOpen });
 
-      
+
     });
 });
 function initGraph() {
@@ -222,14 +142,14 @@ function initGraph() {
 
                     $message = $('#message');
 
-                  
+
                     self = this;
-                 
+
                 }
             }
         },
         title: {
-            text: 'Real Live Data of Presenters on Stage'
+            text: 'Real Live Data Sensors'
         },
         xAxis: {
             type: 'datetime',
@@ -351,7 +271,7 @@ function initGauge(controlname, displayname) {
         },
 
         series: [{
-            name: 'Speed',
+            name: 'Temperature Avg',
             data: [0],
             dataLabels: {
                 format: '<div style="text-align:center"><span style="font-size:25px;color:' +
@@ -359,12 +279,12 @@ function initGauge(controlname, displayname) {
                        '<span style="font-size:12px;color:silver">Per Sec</span></div>'
             },
             tooltip: {
-                valueSuffix: ' BPS'
+                valueSuffix: ' C'
             }
         }]
 
     }));
 
-   
-  
+
+
 }
