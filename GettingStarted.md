@@ -35,9 +35,8 @@ Microsoft Specific Stack
 ## Setup Tasks ##
 Setting up your IoT solution involves several distinct steps, each of which is fully described in this project:
 
-
 	1. Clone or copy the project to your machine (NOTE: place the project in a folder as close to the root of your file system as possible. Some paths in the project are very long and you might encounter issues with long path names when restoring NuGet packages, or NPM Packages)
-	2. [Azure prep](Azure/AzurePrep/AzurePrep.md) - Creating basic Azure resources
+	2. [Azure prep](https://github.com/tanchunsiong/Custom-Connect-The-Dots---Public/blob/master/AzurePrep.md) - Creating basic Azure resources
 	3. [Device setup](https://github.com/tanchunsiong/Custom-Connect-The-Dots---Public/tree/master/connectthedots%20arduino%20sketch) - Configuring your device(s)
 	4. [Sample website deployment](https://github.com/tanchunsiong/Custom-Connect-The-Dots---Public/tree/master/connectthedots%20nodejs%20website%20with%20highcharts) - Publishing a generic sample website for viewing the data
 	5. [Stream Analytics integration](https://github.com/tanchunsiong/Custom-Connect-The-Dots---Public/blob/master/StreamAnalyticsQueries/SA_setup.md) - Configuring Stream Analytics to send alerts and averages to the sample website.
