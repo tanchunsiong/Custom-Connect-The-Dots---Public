@@ -6,7 +6,8 @@
     <ProjectGuid>{4a741730-40e4-4ca4-8290-e2ff0830df9c}</ProjectGuid>
     <ProjectHome />
     <ProjectView>ShowAllFiles</ProjectView>
-    <StartupFile>serialreader.js</StartupFile>
+    <StartupFile>
+    </StartupFile>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
@@ -19,7 +20,6 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <ItemGroup>
     <Content Include="readme.md" />
-    <Content Include="sbus-amqp10.zip" />
     <None Include="cspi1.pubxml" />
     <Content Include="package.json" />
     <Compile Include="lib\eventhub.js" />
@@ -28,7 +28,6 @@
     <Compile Include="lib\eventhub_processor.js" />
     <Compile Include="lib\sbus.js" />
     <Compile Include="lib\storage.js" />
-    <Compile Include="serialreader.js" />
     <Compile Include="test\test_eventhub_partition.js" />
   </ItemGroup>
   <ItemGroup>

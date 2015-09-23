@@ -22,7 +22,6 @@
     <Content Include="ASAAlertsChart.jpg" />
     <Content Include="IISNode.yml" />
     <Content Include="public\Websocketclient.html" />
-    <Content Include="sbus-amqp10.zip" />
     <Content Include="Web.config" />
     <Content Include="WebsiteDetails.md" />
     <Content Include="WebsitePublish.md" />

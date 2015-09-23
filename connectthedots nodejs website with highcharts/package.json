@@ -30,7 +30,7 @@
     "xml2js": "*",
     "express": "4.13.3",
     "bl": "1.0.0",
-	 "amqp10": "^1.0.2",
+	   "amqp10": "^1.0.2",
     "node-amqp-encoder": "^0.0.2"
   },
   "devDependencies": {
