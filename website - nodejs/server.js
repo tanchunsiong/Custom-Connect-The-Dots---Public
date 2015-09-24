@@ -1,18 +1,16 @@
-
-module.exports = require('./lib/sbus');
-
+﻿module.exports = require('./lib/sbus');
 
 
 var http = require("http");
 var express = require("express");
 var app = express();
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 1337;
 
 
 app.use(express.static(__dirname + '/public'));
+
 var server = http.createServer(app);
 server.listen(port);
-
 
 var WebSocketServer = require('ws').Server;
 var wss = new WebSocketServer({ server: server });
@@ -49,7 +47,7 @@ wss.broadcast = function broadcast(data) {
 };
 
 wss.on('connection', function connection(ws) {
-
+    
     ws.on('message', function incoming(message) {
         console.log('received: %s', message);
         wss.broadcast(message);
@@ -65,9 +63,9 @@ for (var idx = 0; idx < numPartitions; ++idx) {
         } else {
             console.log("partition: " + partition);
             console.log(payload);
-         
+            
             var tmpstring = JSON.stringify(payload);
-            tmpstring = tmpstring.replace("}",",\"time\":\""+payload.timecreated+"\"}");
+            tmpstring = tmpstring.replace("}", ",\"time\":\"" + payload.timecreated + "\"}");
             wss.broadcast(tmpstring);
         }
     }

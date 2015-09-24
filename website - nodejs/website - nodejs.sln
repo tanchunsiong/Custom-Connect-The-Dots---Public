@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "node-sbus-master", "node-sbus-master.njsproj", "{7EF54571-2A87-430D-AB93-CB4FD4BF15EB}"
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "website - nodejs", "website - nodejs.njsproj", "{401E6A75-6FFB-4AA2-AF1E-4E4F1D50491A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7EF54571-2A87-430D-AB93-CB4FD4BF15EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7EF54571-2A87-430D-AB93-CB4FD4BF15EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7EF54571-2A87-430D-AB93-CB4FD4BF15EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7EF54571-2A87-430D-AB93-CB4FD4BF15EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{401E6A75-6FFB-4AA2-AF1E-4E4F1D50491A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{401E6A75-6FFB-4AA2-AF1E-4E4F1D50491A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{401E6A75-6FFB-4AA2-AF1E-4E4F1D50491A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{401E6A75-6FFB-4AA2-AF1E-4E4F1D50491A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

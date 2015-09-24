@@ -1,0 +1,33 @@
+{
+  "name": "connectthedotsservice-nodejs-winjs",
+  "version": "0.0.0",
+  "description": "connectthedotsservice nodejs winjs",
+  "main": "server.js",
+  "author": {
+    "name": "cstan",
+    "email": ""
+  },
+"dependencies": {
+    "async": "*",
+    "azure-storage": "*",
+    "debug": "^2.1.1",
+    "node-uuid": "*",
+    "request": "*",
+    "utf8": "*",
+    "ws": "^0.8.0",
+    "xml2js": "*",
+    "express": "4.13.3",
+    "bl": "1.0.0",
+	   "amqp10": "^1.0.2",
+    "node-amqp-encoder": "^0.0.2"
+  },
+  "devDependencies": {
+    "optimist": "*",
+    "jshint": "^2.5.11",
+    "mocha": "^1.21.4",
+    "should": "^4.0.4"
+  },
+  "engines": {
+    "node": "0.10.x"
+  }
+}

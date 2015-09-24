@@ -65,9 +65,9 @@ Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "serialport sender - python"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "serialport sender - RPi2 headed app", "serialport sender - RPi2 headed app\serialport sender - RPi2 headed app.csproj", "{1441B880-C549-4341-A2AB-0D2547168344}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "website - aspnet ws", "website dotnet\ConnectTheDotsWebSite\website - aspnet ws.csproj", "{2E3E7496-59D5-48BC-909E-207120886E3E}"
-EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "MsBand.shared", "MsBand sender\Sensors\Sensors.Shared\MsBand.shared.shproj", "{C628A594-0F2D-4E1E-AE32-3C2E424A56A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "website - aspnet ws", "website - dotnet\ConnectTheDotsWebSite\website - aspnet ws.csproj", "{2E3E7496-59D5-48BC-909E-207120886E3E}"
 EndProject
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "website - nodejs", "website - nodejs\website - nodejs.njsproj", "{401E6A75-6FFB-4AA2-AF1E-4E4F1D50491A}"
 EndProject
