@@ -123,7 +123,7 @@ d3ChartControl.prototype = {
         // add new option
         self.setOption({
             guid: evt.guid,
-            title: evt.displayname,
+            title: evt.measurename, //dreamtcs change this for left hand side
             location: evt.location ? evt.location : "Unknown"
         });
     },

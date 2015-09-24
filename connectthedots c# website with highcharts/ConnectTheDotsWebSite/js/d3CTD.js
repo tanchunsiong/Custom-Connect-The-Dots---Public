@@ -277,6 +277,9 @@ $(document).ready(function () {
     var sss = (window.location.protocol.indexOf('s') > 0 ? "s" : "");
     var uri = 'ws' + sss + '://' + window.location.host + '/api/websocketconnect?clientId=none';
 
+
+
+
     $('#messages').prepend('<div> Connecting to ' + uri + '<div>');
     dataFlows.dataSource = new d3CTDDataSourceSocket(uri).addEventListeners({ 'eventObject': onNewEvent, 'error': onError, 'open': onOpen });
 

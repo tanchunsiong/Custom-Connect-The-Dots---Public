@@ -21,7 +21,10 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 //  ---------------------------------------------------------------------------------*/
-
+with
+    
+tempoutput1 as
+(
 Select
     measurename,
     unitofmeasure,
@@ -38,3 +41,26 @@ where
 Group by
     measurename, unitofmeasure,
     TumblingWindow(Second, 10)
+    ), tempoutput2 as (
+Select
+    measurename,
+    unitofmeasure,
+    'All Sensors' AS location,
+    'All Sensors' AS organization,
+    'ace60e7c-a6aa-4694-ba86-c3b66952558e' AS guid,
+    'Light Average' as displayname,
+    Max(timecreated) as timecreated,
+    Avg(value) AS value
+From
+    DevicesInput TIMESTAMP BY timecreated
+where
+    measurename = 'light' OR measurename='Light'
+Group by
+    measurename, unitofmeasure,
+    TumblingWindow(Second, 10)
+    )
+    
+        
+SELECT * INTO output FROM tempoutput1
+SELECT * INTO output2 FROM tempoutput2
+

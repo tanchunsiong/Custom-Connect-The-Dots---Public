@@ -31,16 +31,19 @@
             if ("WebSocket" in window)
             {
 
+                // create datasource
+                var sss = (window.location.protocol.indexOf('s') > 0 ? "s" : "");
+                var uri = 'ws' + sss + '://' + window.location.host;
 
                var textValue = document.getElementsByName('txtMessage')[0].value
                // Let us open a web socket
-               var ws = new WebSocket("ws://localhost:8080/");
+               var ws = new WebSocket(uri);
 
                ws.onopen = function()
                {
                   // Web Socket is connected, send data using send()
                    ws.send(textValue);
-                   alert("Message is sent...");
+                   alert("Message is sent to "+uri);
                };
 
                //ws.onmessage = function (evt) {

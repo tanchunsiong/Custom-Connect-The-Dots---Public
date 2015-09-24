@@ -88,7 +88,7 @@ function addNewDataFlow(eventObject) {
         updateGauge('#container-speed', eventObject.value);
     }
 
-    if (eventObject['measurename'] == "HeartRate" && eventObject['displayname'] == "Tan Chun Siong") {
+    if (eventObject['displayname'] == "Light Average") {
         updateGauge('#container-speed2', eventObject.value);
     }
 
@@ -113,18 +113,15 @@ function onNewEvent(evt) {
 $(function () {
     $(document).ready(function () {
 
-        // create datasource
-
         var sss = (window.location.protocol.indexOf('s') > 0 ? "s" : "");
         var uri = 'ws' + sss + '://' + window.location.host + '/api/websocketconnect?clientId=none';
-
         Highcharts.setOptions({
             global: {
                 useUTC: false
             }
         });
-        initGauge('#container-speed', 'SSH Attempts');
-        initGauge('#container-speed2', 'Heartbeat of Tan Chun Siong');
+        initGauge('#container-speed', 'Temperature Average');
+        initGauge('#container-speed2', 'Light Average');
         initGraph();
         var connection = new WebSocket(uri);
 
@@ -273,12 +270,12 @@ function initGauge(controlname, displayname) {
         },
 
         series: [{
-            name: 'Temperature Avg',
+            name: 'Avg',
             data: [0],
             dataLabels: {
                 format: '<div style="text-align:center"><span style="font-size:25px;color:' +
                     ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">{y}</span><br/>' +
-                       '<span style="font-size:12px;color:silver">Per Sec</span></div>'
+                       '<span style="font-size:12px;color:silver">Your own unit</span></div>'
             },
             tooltip: {
                 valueSuffix: ' C'
