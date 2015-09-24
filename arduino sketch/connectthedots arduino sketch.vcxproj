@@ -22,6 +22,7 @@
     <ProjectGuid>{56AFB48A-757D-4D14-A001-E5F92EC4EE66}</ProjectGuid>
     <RootNamespace>connectthedotsarduinosketch</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <ProjectName>arduino sketch</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

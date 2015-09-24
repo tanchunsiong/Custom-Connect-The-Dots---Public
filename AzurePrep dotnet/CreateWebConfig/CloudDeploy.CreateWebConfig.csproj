@@ -165,9 +165,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Common\Microsoft.ConnectTheDots.CloudDeploy.Common.csproj">
+    <ProjectReference Include="..\Common\CloudDeploy.Common.csproj">
       <Project>{987E2AAB-AC91-4781-89B7-C1AD0AF01D8A}</Project>
-      <Name>Microsoft.ConnectTheDots.CloudDeploy.Common</Name>
+      <Name>CloudDeploy.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

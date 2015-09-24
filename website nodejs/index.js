@@ -2,7 +2,7 @@
 module.exports = require('./lib/sbus');
 
 
-var WebSocketServer = require('ws').Server;
+
 var http = require("http");
 var express = require("express");
 var app = express();
@@ -13,6 +13,8 @@ app.use(express.static(__dirname + '/public'));
 var server = http.createServer(app);
 server.listen(port);
 
+
+var WebSocketServer = require('ws').Server;
 var wss = new WebSocketServer({ server: server });
 
 
