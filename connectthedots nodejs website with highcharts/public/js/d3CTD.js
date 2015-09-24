@@ -275,8 +275,10 @@ $(document).ready(function () {
     
     // create datasource
     var sss = (window.location.protocol.indexOf('s') > 0 ? "s" : "");
-    //var uri = 'ws' + sss + '://' + window.location.host + '/api/websocketconnect?clientId=none';
-    var uri = 'ws://iisnodedemo.cloudapp.net:8080/';
+    var uri = 'ws' + sss + '://' + window.location.host;
+
+
+
     $('#messages').prepend('<div> Connecting to ' + uri + '<div>');
     dataFlows.dataSource = new d3CTDDataSourceSocket(uri).addEventListeners({ 'eventObject': onNewEvent, 'error': onError, 'open': onOpen });
 

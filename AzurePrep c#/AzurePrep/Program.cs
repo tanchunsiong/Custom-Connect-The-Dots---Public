@@ -344,6 +344,10 @@ namespace Microsoft.ConnectTheDots.CloudDeploy.AzurePrep
 
             ehDescriptionDevices.Authorization.Add( new SharedAccessAuthorizationRule( "StreamingAnalytics", new List<AccessRights> { AccessRights.Manage, AccessRights.Listen, AccessRights.Send } ) );
 
+            ehDescriptionDevices.Authorization.Add(new SharedAccessAuthorizationRule("linuxlogger", new List<AccessRights> {  AccessRights.Send }));
+
+            ehDescriptionDevices.Authorization.Add(new SharedAccessAuthorizationRule("immersionkitsender", new List<AccessRights> { AccessRights.Send }));
+           
             _ConsoleBuffer.Add( string.Format( "Creating Event Hub {0}...", inputs.EventHubNameDevices ) );
 
             result.ehDevices = null;

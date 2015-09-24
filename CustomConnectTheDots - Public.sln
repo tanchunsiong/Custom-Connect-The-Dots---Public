@@ -59,6 +59,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StreamAnalyticsQueries", "S
 		StreamAnalyticsQueries\LightSensor.sql = StreamAnalyticsQueries\LightSensor.sql
 		StreamAnalyticsQueries\SA_setup.md = StreamAnalyticsQueries\SA_setup.md
 		StreamAnalyticsQueries\SameContainerWarning.jpg = StreamAnalyticsQueries\SameContainerWarning.jpg
+		sshattemptoutput.sql = sshattemptoutput.sql
+		sshattemptsavg.sql = sshattemptsavg.sql
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.ConnectTheDots.CloudDeploy.AzurePrep", "AzurePrep c#\AzurePrep\Microsoft.ConnectTheDots.CloudDeploy.AzurePrep.csproj", "{5A2497C7-09B1-4C66-9D45-7F68F4D7628F}"

@@ -40,7 +40,7 @@
     "should": "^4.0.4"
   },
   "engines": {
-    "node": "0.10.40"
+    "node": "0.10.x"
   },
   "scripts": {
     "pretest": "jshint lib",

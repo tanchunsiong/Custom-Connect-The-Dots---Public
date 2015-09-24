@@ -5,10 +5,10 @@ import datetime
 import os
 import serial
 from azure.servicebus import ServiceBusService
+#you would need to install pyserial, and azure for this project to work.
 
-
-key_name = "eventhub key name"
-key_value = "eventhubkey"
+key_name = "linuxlogger"
+key_value = "SdcLrzfc7JMq5Ny+s972ydTwwU98DMBp6slwTXLGx68="
 
 sbs = ServiceBusService("cspi1-ns",shared_access_key_name=key_name, shared_access_key_value=key_value)
 

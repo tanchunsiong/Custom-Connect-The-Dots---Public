@@ -115,7 +115,7 @@ $(function () {
 
         // create datasource
         var sss = (window.location.protocol.indexOf('s') > 0 ? "s" : "");
-        var uri = 'ws://iisnodedemo.cloudapp.net:8080/';
+        var uri = 'ws' + sss + '://' + window.location.host;
         Highcharts.setOptions({
             global: {
                 useUTC: false
