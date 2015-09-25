@@ -187,6 +187,6 @@ float get_light_level()
 {
 
   float lightSensor = analogRead(LightSensorPin);
-  lightSensor = 1 / lightSensor * 10;
-  return (lightSensor);
+  lightSensor = 1/lightSensor *1500;
+  return(lightSensor);
 }

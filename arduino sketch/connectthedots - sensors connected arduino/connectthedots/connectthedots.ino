@@ -52,7 +52,7 @@ float get_light_level()
 {
 
   float lightSensor = analogRead(LightSensorPin);
-  lightSensor = 1/lightSensor *10;
+  lightSensor = 1/lightSensor *1500;
   return(lightSensor);
 }
 
@@ -153,13 +153,21 @@ delay(500);
   strcat(buffer,"}");
  Serial.println(buffer);
 delay(500);
+ if(Serial.available() > 0)
+    {
+       String str = Serial.readStringUntil('\n');
+    Serial.println(str);
+        if (str == "{command:off}"){
+          digitalWrite(ledPinRed, LOW);
+          digitalWrite(ledPinGreen, LOW);
+        }
+        else if (str == "{command:on}"){
+          digitalWrite(ledPinRed, HIGH);
+          digitalWrite(ledPinGreen, HIGH);
+        }
 
-digitalWrite(ledPinRed, LOW);
-digitalWrite(ledPinGreen, LOW);
-delay(2000);
+    }
 
-digitalWrite(ledPinRed, HIGH);
-digitalWrite(ledPinGreen, HIGH);
 
 }// end loop()
 
