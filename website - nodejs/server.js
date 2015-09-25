@@ -74,8 +74,12 @@ for (var idx = 0; idx < numPartitions; ++idx) {
 					{
 					var targetstring =  JSON.stringify(jsonObj[item]);
 				    targetstring = targetstring.replace("}", ",\"time\":\"" + JSON.parse(jsonObj[item]).timecreated + "\"}");
-					console.log("     sending : "+ targetstring);
-                    wss.broadcast(targetstring);
+				
+                    
+                    if (isValidJson(targetstring)) {
+                        console.log("    sending : " + targetstring);
+                        wss.broadcast(targetstring);
+                    }
 				}
 			
 			    tmpstring="";
@@ -87,8 +91,11 @@ for (var idx = 0; idx < numPartitions; ++idx) {
 				try{
 						tmpstring = JSON.stringify(payload);
 						tmpstring = tmpstring.replace("}", ",\"time\":\"" + payload.timecreated + "\"}");
-						console.log("    sending : "+ tmpstring);
-						wss.broadcast(tmpstring);
+                    
+                    if (isValidJson(tmpstring)) {
+                        console.log("    sending : " + tmpstring);
+                        wss.broadcast(tmpstring);
+                    }
 				}catch (err){
 				console.log(err.message);
 				}
@@ -122,40 +129,30 @@ for (var idx = 0; idx < numPartitions2; ++idx) {
 					{
 					var targetstring =  JSON.stringify(jsonObj[item]);
 					targetstring=JSON.parse(targetstring);
-					
 				    targetstring = targetstring.replace("}", ",\"time\":\"" + JSON.parse(jsonObj[item]).timecreated + "\"}");
-					console.log("     sending : "+ targetstring);
-                    wss.broadcast(targetstring);
+                    
+                   if( isValidJson(targetstring)) {
+                        console.log("    sending : " + targetstring);
+                        wss.broadcast(targetstring);
+                    }
+  
 				}
 			
 			    tmpstring="";
 				
-				//var lineseperatedarray = tmpstring.split("\r\n");
-				//console.log("lineseperatedarray is "+ lineseperatedarray.toString());
-				//for (var item in lineseperatedarray)
-				//	{
-				//	var targetstring =  JSON.parse('[' + lineseperatedarray[item]+ ']');
-				//	
-				//	targetstring = tmpstring.replace("}", ",\"time\":\"" + payload.timecreated + "\"}");
-				//	console.log("targetstring is "+ targetstring);
-                //    wss.broadcast(targetstring);
-				//	}
-			    //var jsonObj = JSON.parse('[' + tmpstring + ']');
-				//console.log("jsonObj is "+ jsonObj.toString());
-				//for (var item in jsonObj)
-				//	{
-				//	var targetstring =  JSON.stringify(jsonObj[item]);
-				//	targetstring = tmpstring.replace("}", ",\"time\":\"" + payload.timecreated + "\"}");
-                //    wss.broadcast(targetstring);
-				//	}
+
 			}
 			//single item
 			catch(err) {
 			try{
 					tmpstring = JSON.stringify(payload);
 				    tmpstring = tmpstring.replace("}", ",\"time\":\"" + payload.timecreated + "\"}");
-					console.log("    sending : "+ tmpstring);
-                    wss.broadcast(tmpstring);
+                   
+                    if (isValidJson(tmpstring)) {
+                        console.log("    sending : " + tmpstring);
+                        wss.broadcast(tmpstring);
+                    }
+                    
 			}catch (err){
 			console.log(err.message);
 			}
@@ -167,4 +164,14 @@ for (var idx = 0; idx < numPartitions2; ++idx) {
     }
     );
 }
+
+function isValidJson(json) {
+    try {
+        JSON.parse(json);
+        return true;
+    } catch (e) {
+        return false;
+    }
+}
+
 
