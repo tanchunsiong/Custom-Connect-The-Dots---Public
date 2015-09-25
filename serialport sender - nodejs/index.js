@@ -16,7 +16,7 @@ var hub = sbus.EventHubClient(serviceBus, eventHubName, sasKeyName, sasKey);
 
 var SerialPort = require("serialport").SerialPort;
 //this is for windows based systems
-var sp = new SerialPort("COM3", {
+var sp = new SerialPort("COM7", {
     baudrate: 9600
 });
 //this is for linux and macos based systems
@@ -24,7 +24,7 @@ var sp = new SerialPort("COM3", {
 
 try {
     var WebSocket = require('ws');
-    var ws = new WebSocket('ws://iisnodedemo.cloudapp.net:8080/');
+    var ws = new WebSocket('ws://cspi1nodejs.azurewebsites.net/');
     
     ws.on('open', function open() {
         console.log('connected');
