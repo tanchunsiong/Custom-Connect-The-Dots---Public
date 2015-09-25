@@ -61,12 +61,43 @@ for (var idx = 0; idx < numPartitions; ++idx) {
         if (rx_err) {
             console.log(rx_err);
         } else {
-            console.log("partition: " + partition);
-            console.log(payload);
-            
-            var tmpstring = JSON.stringify(payload);
-            tmpstring = tmpstring.replace("}", ",\"time\":\"" + payload.timecreated + "\"}");
-            wss.broadcast(tmpstring);
+              console.log("partition: " + partition);
+            //console.log(payload);
+		    var tmpstring;
+			//multiline
+			try {
+			
+                tmpstring = JSON.stringify(payload.split('\r\n'));
+				var jsonObj = JSON.parse( tmpstring  );
+		   
+		   	for (var item in jsonObj)
+					{
+					var targetstring =  JSON.stringify(jsonObj[item]);
+				    targetstring = targetstring.replace("}", ",\"time\":\"" + JSON.parse(jsonObj[item]).timecreated + "\"}");
+					console.log("     sending : "+ targetstring);
+                    wss.broadcast(targetstring);
+				}
+			
+			    tmpstring="";
+				
+			
+			}
+			//single item
+			catch(err) {
+				try{
+						tmpstring = JSON.stringify(payload);
+						tmpstring = tmpstring.replace("}", ",\"time\":\"" + payload.timecreated + "\"}");
+						console.log("    sending : "+ tmpstring);
+						wss.broadcast(tmpstring);
+				}catch (err){
+				console.log(err.message);
+				}
+					tmpstring="";
+			}
+
+
+			
+     
         }
     }
     );
@@ -79,11 +110,59 @@ for (var idx = 0; idx < numPartitions2; ++idx) {
             console.log(rx_err);
         } else {
             console.log("partition: " + partition);
-            console.log(payload);
-            
-            var tmpstring = JSON.stringify(payload);
-            tmpstring = tmpstring.replace("}", ",\"time\":\"" + payload.timecreated + "\"}");
-            wss.broadcast(tmpstring);
+            //console.log(payload);
+		    var tmpstring;
+			//multiline
+			try {
+			
+                tmpstring = JSON.stringify(payload.split('\r\n'));
+				var jsonObj = JSON.parse( tmpstring  );
+		   
+		   	for (var item in jsonObj)
+					{
+					var targetstring =  JSON.stringify(jsonObj[item]);
+					targetstring=JSON.parse(targetstring);
+					
+				    targetstring = targetstring.replace("}", ",\"time\":\"" + JSON.parse(jsonObj[item]).timecreated + "\"}");
+					console.log("     sending : "+ targetstring);
+                    wss.broadcast(targetstring);
+				}
+			
+			    tmpstring="";
+				
+				//var lineseperatedarray = tmpstring.split("\r\n");
+				//console.log("lineseperatedarray is "+ lineseperatedarray.toString());
+				//for (var item in lineseperatedarray)
+				//	{
+				//	var targetstring =  JSON.parse('[' + lineseperatedarray[item]+ ']');
+				//	
+				//	targetstring = tmpstring.replace("}", ",\"time\":\"" + payload.timecreated + "\"}");
+				//	console.log("targetstring is "+ targetstring);
+                //    wss.broadcast(targetstring);
+				//	}
+			    //var jsonObj = JSON.parse('[' + tmpstring + ']');
+				//console.log("jsonObj is "+ jsonObj.toString());
+				//for (var item in jsonObj)
+				//	{
+				//	var targetstring =  JSON.stringify(jsonObj[item]);
+				//	targetstring = tmpstring.replace("}", ",\"time\":\"" + payload.timecreated + "\"}");
+                //    wss.broadcast(targetstring);
+				//	}
+			}
+			//single item
+			catch(err) {
+			try{
+					tmpstring = JSON.stringify(payload);
+				    tmpstring = tmpstring.replace("}", ",\"time\":\"" + payload.timecreated + "\"}");
+					console.log("    sending : "+ tmpstring);
+                    wss.broadcast(tmpstring);
+			}catch (err){
+			console.log(err.message);
+			}
+				
+					tmpstring="";
+			}
+
         }
     }
     );
