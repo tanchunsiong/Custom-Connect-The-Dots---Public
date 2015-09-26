@@ -1,11 +1,12 @@
-﻿import sys
+
+import sys
 import re
 import time
 import datetime
 import os
 import serial
 from azure.servicebus import ServiceBusService
-#you would need to install pyserial, and azure for this project to work.
+
 
 key_name = "linuxlogger"
 key_value = "SdcLrzfc7JMq5Ny+s972ydTwwU98DMBp6slwTXLGx68="
@@ -17,8 +18,8 @@ try:
     #logfile = raw_input("Please enter a file to parse, e.g /var/log/secure: ")
     #logfile ="/var/log/secure"
     logfile ="secure"
-    ser = serial.Serial('COM3', 115200)
-    #ser = serial.Serial('/dev/ttyACM0', 9600)
+    #ser = serial.Serial('COM3', 9600)
+    ser = serial.Serial('/dev/ttyACM0', 9600)
     while(True):
         try:
             text = ser.readline()
@@ -28,16 +29,16 @@ try:
               firststring= text.split('timenow')[0];
               laststring= text.split('timenow')[1];
               messagetosend = firststring + timecreated  +laststring;
-              print(messagetosend)
-              sbs.send_event('ehdevices', messagetosend)
+              print(messagetosend);
+              sbs.send_event('ehdevices',messagetosend);
               text='';
 
-        except:
-            print "Unexpected error in Main Thread:",sys.exc_info()[0]    
-
+        except Exception as ex:
+            template = "An exception of type {0} occured, Arguments : {1!r}"
+            message = template.format(type(ex).__name__,ex.args)
+            print message
 except:
-        print "I/O Error",sys.exc_info()[0]    
+        print "I/O Error"
 
-def sendToAzure(messagetosend):
-    sbs.send_event('ehdevices', messagetosend)
+
 
