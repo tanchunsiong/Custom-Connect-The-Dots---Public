@@ -107,9 +107,13 @@
     <Content Include="js\d3Chart.js" />
     <Content Include="js\d3ChartControl.js" />
     <Content Include="js\d3CTD.js" />
+    <Content Include="js\highchartutils.js" />
+    <Content Include="js\highchartCTDDataSourceFilter.js" />
+    <Content Include="js\highchartCTDDataSourceSocket.js" />
     <Content Include="js\d3CTDDataSourceSocket.js" />
     <Content Include="js\d3DataFlow.js" />
     <Content Include="js\d3CTDDataSourceFilter.js" />
+    <Content Include="js\highchartDataSourceSocket.js" />
     <Content Include="js\d3DataSourceSocket.js" />
     <Content Include="js\d3utils.js" />
     <Content Include="js\highchartCTD.js" />

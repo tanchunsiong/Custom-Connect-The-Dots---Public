@@ -14,11 +14,11 @@ String.prototype.hashCode = function () {
 };
 
 function onError(evt) {
-    
+
 }
 
 function onOpen(evt) {
-   
+
 }
 function checkBulkMode(evt) {
     if (evt.bulkData != undefined) {
@@ -70,10 +70,10 @@ function updateGauge(controlname, heartbeat) {
 
     if (chart) {
         point = chart.series[0].points[0];
-        
+
         newVal = heartbeat;
 
-   
+
 
         point.update(newVal);
     }
@@ -91,8 +91,8 @@ function addNewDataFlow(eventObject) {
     if (eventObject['displayname'] == "Light Average") {
         updateGauge('#container-speed2', eventObject.value);
     }
-   
-    
+
+
 
 }
 function onNewEvent(evt) {
@@ -113,7 +113,6 @@ function onNewEvent(evt) {
 $(function () {
     $(document).ready(function () {
 
-        // create datasource
         var sss = (window.location.protocol.indexOf('s') > 0 ? "s" : "");
         var uri = 'ws' + sss + '://' + window.location.host;
         Highcharts.setOptions({
@@ -121,14 +120,14 @@ $(function () {
                 useUTC: false
             }
         });
-        initGauge('#container-speed','Temperature Average');
+        initGauge('#container-speed', 'Temperature Average');
         initGauge('#container-speed2', 'Light Average');
         initGraph();
         var connection = new WebSocket(uri);
-        
-        dataFlows.dataSource = new d3CTDDataSourceSocket(uri).addEventListeners({ 'eventObject': onNewEvent, 'error': onError, 'open': onOpen });
 
-      
+        dataFlows.dataSource = new highchartCTDDataSourceSocket(uri).addEventListeners({ 'eventObject': onNewEvent, 'error': onError, 'open': onOpen });
+
+
     });
 });
 function initGraph() {
@@ -142,9 +141,9 @@ function initGraph() {
 
                     $message = $('#message');
 
-                  
+
                     self = this;
-                 
+
                 }
             }
         },
@@ -285,6 +284,6 @@ function initGauge(controlname, displayname) {
 
     }));
 
-   
-  
+
+
 }

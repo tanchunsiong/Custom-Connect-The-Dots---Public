@@ -71,6 +71,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "website - aspnet ws", "webs
 EndProject
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "website - nodejs", "website - nodejs\website - nodejs.njsproj", "{401E6A75-6FFB-4AA2-AF1E-4E4F1D50491A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EHConsole", "EHConsole\EHConsole\EHConsole.csproj", "{2C5A6633-D937-40DE-9700-8A273CD5099F}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		MsBand sender\Sensors\Sensors.Shared\Sensors.Shared.projitems*{c628a594-0f2d-4e1e-ae32-3c2e424a56a3}*SharedItemsImports = 13
@@ -493,6 +495,30 @@ Global
 		{401E6A75-6FFB-4AA2-AF1E-4E4F1D50491A}.Release|x64.Build.0 = Release|Any CPU
 		{401E6A75-6FFB-4AA2-AF1E-4E4F1D50491A}.Release|x86.ActiveCfg = Release|Any CPU
 		{401E6A75-6FFB-4AA2-AF1E-4E4F1D50491A}.Release|x86.Build.0 = Release|Any CPU
+		{2C5A6633-D937-40DE-9700-8A273CD5099F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C5A6633-D937-40DE-9700-8A273CD5099F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C5A6633-D937-40DE-9700-8A273CD5099F}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{2C5A6633-D937-40DE-9700-8A273CD5099F}.Debug|ARM.Build.0 = Debug|Any CPU
+		{2C5A6633-D937-40DE-9700-8A273CD5099F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{2C5A6633-D937-40DE-9700-8A273CD5099F}.Debug|x64.Build.0 = Debug|Any CPU
+		{2C5A6633-D937-40DE-9700-8A273CD5099F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2C5A6633-D937-40DE-9700-8A273CD5099F}.Debug|x86.Build.0 = Debug|Any CPU
+		{2C5A6633-D937-40DE-9700-8A273CD5099F}.Raspberry PI 2|Any CPU.ActiveCfg = Release|Any CPU
+		{2C5A6633-D937-40DE-9700-8A273CD5099F}.Raspberry PI 2|Any CPU.Build.0 = Release|Any CPU
+		{2C5A6633-D937-40DE-9700-8A273CD5099F}.Raspberry PI 2|ARM.ActiveCfg = Release|Any CPU
+		{2C5A6633-D937-40DE-9700-8A273CD5099F}.Raspberry PI 2|ARM.Build.0 = Release|Any CPU
+		{2C5A6633-D937-40DE-9700-8A273CD5099F}.Raspberry PI 2|x64.ActiveCfg = Release|Any CPU
+		{2C5A6633-D937-40DE-9700-8A273CD5099F}.Raspberry PI 2|x64.Build.0 = Release|Any CPU
+		{2C5A6633-D937-40DE-9700-8A273CD5099F}.Raspberry PI 2|x86.ActiveCfg = Release|Any CPU
+		{2C5A6633-D937-40DE-9700-8A273CD5099F}.Raspberry PI 2|x86.Build.0 = Release|Any CPU
+		{2C5A6633-D937-40DE-9700-8A273CD5099F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C5A6633-D937-40DE-9700-8A273CD5099F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C5A6633-D937-40DE-9700-8A273CD5099F}.Release|ARM.ActiveCfg = Release|Any CPU
+		{2C5A6633-D937-40DE-9700-8A273CD5099F}.Release|ARM.Build.0 = Release|Any CPU
+		{2C5A6633-D937-40DE-9700-8A273CD5099F}.Release|x64.ActiveCfg = Release|Any CPU
+		{2C5A6633-D937-40DE-9700-8A273CD5099F}.Release|x64.Build.0 = Release|Any CPU
+		{2C5A6633-D937-40DE-9700-8A273CD5099F}.Release|x86.ActiveCfg = Release|Any CPU
+		{2C5A6633-D937-40DE-9700-8A273CD5099F}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

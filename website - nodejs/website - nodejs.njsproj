@@ -48,6 +48,10 @@
     <Compile Include="public\js\d3DataSourceSocket.js" />
     <Compile Include="public\js\d3utils.js" />
     <Compile Include="public\js\highchartCTD.js" />
+    <Compile Include="public\js\highchartCTDDataSourceFilter.js" />
+    <Compile Include="public\js\highchartCTDDataSourceSocket.js" />
+    <Compile Include="public\js\highchartDataSourceSocket.js" />
+    <Compile Include="public\js\highchartutils.js" />
     <Compile Include="server.js" />
     <Content Include="bin\Microsoft.NodejsTools.WebRole.dll" />
     <Content Include="WebsiteDetails.md" />

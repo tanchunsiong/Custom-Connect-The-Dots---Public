@@ -125,7 +125,7 @@ $(function () {
         initGraph();
         var connection = new WebSocket(uri);
 
-        dataFlows.dataSource = new d3CTDDataSourceSocket(uri).addEventListeners({ 'eventObject': onNewEvent, 'error': onError, 'open': onOpen });
+        dataFlows.dataSource = new highchartCTDDataSourceSocket(uri).addEventListeners({ 'eventObject': onNewEvent, 'error': onError, 'open': onOpen });
 
 
     });
