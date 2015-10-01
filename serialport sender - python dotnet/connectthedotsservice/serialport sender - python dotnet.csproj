@@ -80,6 +80,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
     <None Include="pyscripts\tgcmsg.pyc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -96,7 +97,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="readme.md" />
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="pyscripts\tgcmsg.py">

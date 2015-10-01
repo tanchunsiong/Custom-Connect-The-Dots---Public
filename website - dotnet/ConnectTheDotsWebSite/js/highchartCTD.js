@@ -123,7 +123,7 @@ $(function () {
         initGauge('#container-speed', 'Temperature Average');
         initGauge('#container-speed2', 'Light Average');
         initGraph();
-        var connection = new WebSocket(uri);
+        //var connection = new WebSocket(uri);
 
         dataFlows.dataSource = new highchartCTDDataSourceSocket(uri).addEventListeners({ 'eventObject': onNewEvent, 'error': onError, 'open': onOpen });
 

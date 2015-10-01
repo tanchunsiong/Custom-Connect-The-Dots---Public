@@ -33,7 +33,7 @@ namespace connectthedotsservice
 
 
 
-            readString( start);
+            readString(start);
         }
 
         public async static void readString(ProcessStartInfo start)

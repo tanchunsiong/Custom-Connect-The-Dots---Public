@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9B5D4580-C567-45E2-A572-41F50CFB3B91}</ProjectGuid>
+    <ProjectGuid>{547896FC-A24F-4AFC-9655-ED6AFA8CEB07}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>connectthedotsservice</RootNamespace>
