@@ -43,10 +43,7 @@ namespace Sensors
             Application.Current.Resuming += Current_Resuming;
             Application.Current.Suspending += Current_Suspending;
 
-            if (toShowHeart)
-                gridHeart.Visibility = Visibility.Visible;
-            else
-                gridHeart.Visibility = Visibility.Collapsed;
+        
         }
 
         

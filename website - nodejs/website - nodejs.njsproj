@@ -54,6 +54,7 @@
     <Compile Include="public\js\highchartutils.js" />
     <Compile Include="server.js" />
     <Content Include="bin\Microsoft.NodejsTools.WebRole.dll" />
+    <Content Include="public\map.html" />
     <Content Include="WebsiteDetails.md" />
     <Content Include="WebsitePublish.md" />
     <None Include="cspi1nodejs.pubxml" />
