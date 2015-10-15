@@ -9,8 +9,8 @@ import threading
 from multiprocessing import Pool
 from azure.servicebus import ServiceBusService
 
-key_name = "eventhub key name"
-key_value = "eventhubkey"
+key_name = "D1"
+key_value = "Ck7zXkmQXSM1ocrf+2WxugAl5BA7VTgQVAYAEIX72SY="
 
 sbs = ServiceBusService("cspi1-ns",shared_access_key_name=key_name, shared_access_key_value=key_value)
 
