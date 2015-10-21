@@ -5,7 +5,7 @@
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
     <Name>website - nodejs</Name>
     <RootNamespace>connectthedotsservice nodejs winjs</RootNamespace>
-    <NameOfLastUsedPublishProfile>cspi1nodejs</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>cspi4</NameOfLastUsedPublishProfile>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -57,7 +57,6 @@
     <Content Include="public\map.html" />
     <Content Include="WebsiteDetails.md" />
     <Content Include="WebsitePublish.md" />
-    <None Include="cspi1nodejs.pubxml" />
     <Content Include="AlertsTable.jpg" />
     <Content Include="ASAAlertsChart.jpg" />
     <Content Include="public\css\connectthedots.css" />

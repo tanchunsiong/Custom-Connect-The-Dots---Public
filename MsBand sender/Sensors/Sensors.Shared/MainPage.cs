@@ -39,7 +39,7 @@ namespace Sensors
         private EventhubHelper ehh;
         //chun siong change to false when running with band
         private bool isTestMode = false;
-        private String UserName = "Tan Chun Siong";
+        private String UserName = "Nicholas Soon";
         protected override void OnNavigatedTo(Windows.UI.Xaml.Navigation.NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
@@ -107,7 +107,7 @@ namespace Sensors
               await Task.Delay(TimeSpan.FromSeconds(1));
                 int heartRate = rand.Next(50, 120) + 30;
 
-                ConnecTheDotsSensor p = new ConnecTheDotsSensor("2328a348-e2f9-4438-ab23-82a3930662ab", "HeartRate", "BPS");
+                ConnecTheDotsSensor p = new ConnecTheDotsSensor("2328a348-e2f9-4438-ab23-82a3930122ab", "HeartRate", "BPS");
                 p.value = heartRate;
                 p.timecreated = ehh.getFormattedTimeString();
                 p.organization = "organization";
@@ -121,7 +121,7 @@ namespace Sensors
                 await Task.Delay(TimeSpan.FromSeconds(1));
                 int temp= rand.Next(35, 40) +5;
                 
-                ConnecTheDotsSensor q = new ConnecTheDotsSensor("41632409-7e93-4e33-9cdd-d99eba60d646", "SkinTemperature", "C");
+                ConnecTheDotsSensor q = new ConnecTheDotsSensor("41632409-7e93-4e33-9cdd-d99eba60d126", "SkinTemperature", "C");
                 q.value = temp;
                 q.timecreated = ehh.getFormattedTimeString();
                 q.organization = "organization";
@@ -241,7 +241,7 @@ namespace Sensors
                     {
 
 
-                        ConnecTheDotsSensor p = new ConnecTheDotsSensor("2298a348-e2f9-4438-ab23-82a3930662ab", "HeartRate", "BPS");
+                        ConnecTheDotsSensor p = new ConnecTheDotsSensor("2298a348-e2f9-4438-ab23-82a3930122ab", "HeartRate", "BPS");
                         p.value = heartRate;
                         p.timecreated = ehh.getFormattedTimeString();
                         p.organization = "organization";
@@ -285,7 +285,7 @@ namespace Sensors
                     {
        
 
-                        ConnecTheDotsSensor q = new ConnecTheDotsSensor("41613409-7e93-4e33-9cdd-d99eba60d646", "SkinTemperature", "C");
+                        ConnecTheDotsSensor q = new ConnecTheDotsSensor("41613409-7e93-4e33-9cdd-d99eba60d126", "SkinTemperature", "C");
                         q.value = temp;
                         q.timecreated = ehh.getFormattedTimeString();
                         q.organization = "organization";

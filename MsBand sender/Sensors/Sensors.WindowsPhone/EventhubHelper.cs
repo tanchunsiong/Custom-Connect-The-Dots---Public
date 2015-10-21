@@ -15,8 +15,8 @@ namespace Sensors
 
         String eventhubname = "ehdevices";
         String deviceID = "D1";
-        String serviceNamespace = "";
-        String sas = "";
+        String serviceNamespace = "cspi2-ns";
+        String sas = "SharedAccessSignature sr=https%3a%2f%2fcspi2-ns.servicebus.windows.net%2fehdevices%2fpublishers%2fd1%2fmessages&sig=p3gyvcglJdA%2fLQpLAnbRYU73l45wh%2bdAFpQMWPwkhaA%3d&se=1759395915&skn=d1";
 
        
         public EventhubHelper()

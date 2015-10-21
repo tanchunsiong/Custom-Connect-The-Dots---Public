@@ -1,4 +1,4 @@
-
+﻿
 import sys
 import re
 import time
@@ -18,8 +18,8 @@ try:
     #logfile = raw_input("Please enter a file to parse, e.g /var/log/secure: ")
     #logfile ="/var/log/secure"
     logfile ="secure"
-    #ser = serial.Serial('COM3', 9600)
-    ser = serial.Serial('/dev/ttyACM0', 9600)
+    ser = serial.Serial('COM7', 9600)
+    #ser = serial.Serial('/dev/ttyACM0', 9600)
     while(True):
         try:
             text = ser.readline()
