@@ -65,7 +65,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.WebSockets, Version=0.2.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Microsoft.WebSockets.0.2.3\lib\net45\Microsoft.WebSockets.dll</HintPath>
+      <HintPath>..\..\packages\Microsoft.WebSockets.0.2.3.1\lib\net45\Microsoft.WebSockets.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.WindowsAzure.Configuration, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -136,11 +136,9 @@
     <Content Include="js\d3DataSourceSocket.js" />
     <Content Include="js\d3utils.js" />
     <Content Include="js\highchartCTD.js" />
-    <Content Include="packages.config">
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="Web.config" />
     <Content Include="WebsiteRunning.jpg" />
+    <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\cspi1.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

@@ -38,7 +38,7 @@ namespace Sensors
         private App viewModel;
         private EventhubHelper ehh;
         //chun siong change to false when running with band
-        private bool isTestMode = false;
+        private bool isTestMode = true;
         private String UserName = "Nicholas Soon";
         protected override void OnNavigatedTo(Windows.UI.Xaml.Navigation.NavigationEventArgs e)
         {

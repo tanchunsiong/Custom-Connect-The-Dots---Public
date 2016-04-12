@@ -23,7 +23,7 @@ namespace connectthedotsservice
         private static StringBuilder tempStringbuilder = new StringBuilder();
         static void Main(string[] args)
         {
-            SerialPort mySerialPort = new SerialPort("COM7");
+            SerialPort mySerialPort = new SerialPort("COM3");
 
             mySerialPort.BaudRate = 9600;
             mySerialPort.Parity = Parity.None;
